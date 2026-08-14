@@ -1,0 +1,9 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow read and write access for educational evaluation and cutoff system
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
